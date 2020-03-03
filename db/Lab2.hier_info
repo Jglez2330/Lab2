@@ -1,0 +1,117 @@
+|DisplayFullAdder
+cin => fourbitfulladder:FH.cin
+aMSB_0 => fourbitfulladder:FH.aMSB_0
+aMSB_1 => fourbitfulladder:FH.aMSB_1
+b_0 => fourbitfulladder:FH.b_0
+b_1 => fourbitfulladder:FH.b_1
+c_0 => fourbitfulladder:FH.c_0
+c_1 => fourbitfulladder:FH.c_1
+dLSB_0 => fourbitfulladder:FH.dLSB_0
+dLSB_1 => fourbitfulladder:FH.dLSB_1
+output[0] << dec7segvhdl:DECO.OUTDEC[0]
+output[1] << dec7segvhdl:DECO.OUTDEC[1]
+output[2] << dec7segvhdl:DECO.OUTDEC[2]
+output[3] << dec7segvhdl:DECO.OUTDEC[3]
+output[4] << dec7segvhdl:DECO.OUTDEC[4]
+output[5] << dec7segvhdl:DECO.OUTDEC[5]
+output[6] << dec7segvhdl:DECO.OUTDEC[6]
+cout << fourbitfulladder:FH.cout
+
+
+|DisplayFullAdder|FourBitFullAdder:FH
+cin => onebitfulladder:FullAdderDLSB.cin
+aMSB_0 => onebitfulladder:FullAdderAMSB.a
+aMSB_1 => onebitfulladder:FullAdderAMSB.b
+b_0 => onebitfulladder:FullAdderB.a
+b_1 => onebitfulladder:FullAdderB.b
+c_0 => onebitfulladder:FullAdderC.a
+c_1 => onebitfulladder:FullAdderC.b
+dLSB_0 => onebitfulladder:FullAdderDLSB.a
+dLSB_1 => onebitfulladder:FullAdderDLSB.b
+outputaMSB <= onebitfulladder:FullAdderAMSB.output
+outputb <= onebitfulladder:FullAdderB.output
+outputc <= onebitfulladder:FullAdderC.output
+outputdLSB <= onebitfulladder:FullAdderDLSB.output
+cout <= onebitfulladder:FullAdderAMSB.cout
+
+
+|DisplayFullAdder|FourBitFullAdder:FH|OneBitFullAdder:FullAdderAMSB
+cin => output.IN1
+cin => cout.IN1
+a => output.IN0
+a => cout.IN0
+a => cout.IN0
+b => output.IN1
+b => cout.IN1
+b => cout.IN1
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DisplayFullAdder|FourBitFullAdder:FH|OneBitFullAdder:FullAdderB
+cin => output.IN1
+cin => cout.IN1
+a => output.IN0
+a => cout.IN0
+a => cout.IN0
+b => output.IN1
+b => cout.IN1
+b => cout.IN1
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DisplayFullAdder|FourBitFullAdder:FH|OneBitFullAdder:FullAdderC
+cin => output.IN1
+cin => cout.IN1
+a => output.IN0
+a => cout.IN0
+a => cout.IN0
+b => output.IN1
+b => cout.IN1
+b => cout.IN1
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DisplayFullAdder|FourBitFullAdder:FH|OneBitFullAdder:FullAdderDLSB
+cin => output.IN1
+cin => cout.IN1
+a => output.IN0
+a => cout.IN0
+a => cout.IN0
+b => output.IN1
+b => cout.IN1
+b => cout.IN1
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DisplayFullAdder|DEC7SEGVHDL:DECO
+aMSB => DEC7SEG:DECO.aMSB
+b => DEC7SEG:DECO.b
+c => DEC7SEG:DECO.c
+dLSB => DEC7SEG:DECO.dLSB
+OUTDEC[0] <= DEC7SEG:DECO.OUTDEC[0]
+OUTDEC[1] <= DEC7SEG:DECO.OUTDEC[1]
+OUTDEC[2] <= DEC7SEG:DECO.OUTDEC[2]
+OUTDEC[3] <= DEC7SEG:DECO.OUTDEC[3]
+OUTDEC[4] <= DEC7SEG:DECO.OUTDEC[4]
+OUTDEC[5] <= DEC7SEG:DECO.OUTDEC[5]
+OUTDEC[6] <= DEC7SEG:DECO.OUTDEC[6]
+
+
+|DisplayFullAdder|DEC7SEGVHDL:DECO|DEC7SEG:DECO
+aMSB => Decoder0.IN0
+b => Decoder0.IN1
+c => Decoder0.IN2
+dLSB => Decoder0.IN3
+OUTDEC[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+OUTDEC[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+OUTDEC[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+OUTDEC[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+OUTDEC[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+OUTDEC[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+OUTDEC[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

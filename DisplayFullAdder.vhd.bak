@@ -1,0 +1,15 @@
+entity DisplayFullAdder is 
+port(
+	cin : in std_logic;
+	aMSB_0 : in std_logic;
+	aMSB_1 : in std_logic;
+	b_0 : in std_logic;
+	b_1 : in std_logic;
+	c_0 : in std_logic;
+	c_1 : in std_logic;
+	dLSB_0 : in std_logic;
+	dLSB_1 : in std_logic;
+	output : out std_logic_vector(6 downto 0);
+	cout : out std_logic
+	);
+end DisplayFullAdder;

@@ -1,0 +1,8 @@
+module DEC7SEG(input aMSB, input b, input c, input dLSB
+					output OUT [7:0])
+	logic [3:0] IN = {aMSB, b, c, dLSB};
+	always_comb begin
+	case (IN)
+		4'h0: OUT = 8'b11111110;
+	end
+endmodule 

@@ -1,0 +1,15 @@
+entity 1BitFullAdder is
+port(
+	in a: std_logic;
+	in b: std_logic;
+	in cin: std_logic;
+	out output: std_logic;
+	out cout: std_logic;
+);
+end 1BitFullAdder;
+
+architecture 1BitFullAdder of 1BitFullAdder is
+begin
+output <= cin xor (a xor b);
+cout <= ((a or b) and cin) or (a and b)  
+end 1BitFullAdder;
